@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zxy_hhhh" />
+
+
+
+<meta name="description" content="最近写了点树套树，感觉也没那么可怕">
+<meta name="keywords" content="OI,数据结构,树套树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树套树">
+<meta property="og:url" content="http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/index.html">
+<meta property="og:site_name" content="zxy_hhhh&#39;s blog">
+<meta property="og:description" content="最近写了点树套树，感觉也没那么可怕">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-05T07:52:25.018Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="树套树">
+<meta name="twitter:description" content="最近写了点树套树，感觉也没那么可怕">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="zxy_hhhh&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>树套树 | zxy_hhhh&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zxy_hhhh</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OI/">OI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树套树/">树套树</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/zykykyk/">巨佬zyk</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/Shallowy">巨佬hje</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://dilute.coding.me">dilute神犇</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">浙江OIer,fighting for dream</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zxy_hhhh</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zxy_hhhh</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-tree-tao-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/05/tree-tao-tree/" class="article-date">
+      <time datetime="2018-12-05T05:26:40.000Z" itemprop="datePublished">2018-12-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      树套树
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树套树/">树套树</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近写了点树套树，感觉也没那么可怕</p>
+<a id="more"></a>
+<h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><p>很多用于动态维护区间的一些东西，比如：区间内大于等于x的数的个数、区间前驱后继等等</p>
+<p>主要思想很简单，就是 对外层树的<strong>每一个节点</strong>建一个内层树</p>
+<p>具体实现方式可见例题</p>
+<h2 id="来几个-栗子"><a href="#来几个-栗子" class="headerlink" title="来几个 栗子"></a>来几个 栗子</h2><h3 id="K大数查询"><a href="#K大数查询" class="headerlink" title="K大数查询"></a><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3110" target="_blank" rel="noopener">K大数查询</a></h3><p>因为有区间修改，所以外层建权值线段树，内层建区间树</p>
+<p>处理修改：对所有包含c的外层树节点所对应的内层树的a~b区间+1</p>
+<p>处理询问：在外层树上二分，若当前节点的<strong>右子树的内层树</strong>a~b区间和&gt;c就往左子树走，否则往右</p>
+<hr>
+<p>注意:</p>
+<p>   区间树要<strong>标记永久化</strong>，不然如果写的不够优秀会 MLE or TLE</p>
+<p>   此题luogu上时限只有1s，大部分代码<del>包括本人代码</del>会被卡常，获得0~100不等的分数。</p>
+<p>   在往左子树走时要减掉右子树a~b区间和带来的贡献</p>
+<hr>
+<p>在具体实现的时候，我为了图方便用了<strong>指针</strong>和<strong>namespace</strong></p>
+<p>如果你看不懂指针，可以往下翻，有无指针的代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Author: zxy_hhhh</span></span><br><span class="line"><span class="comment">    date: 2018/12/01</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x, a, b) for (int x = int(a); x &lt;= (int)(b); x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x, a, b) for (int x = int(a); x &gt;= (int)(b); x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x, a) for (int x = hd[a]; x; x = nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll _x=<span class="number">0</span>;<span class="keyword">int</span> _ch=getchar(),_f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(_ch)&amp;&amp;(_ch!=<span class="string">'-'</span>)&amp;&amp;(_ch!=EOF);_ch=getchar());</span><br><span class="line">    <span class="keyword">if</span> (_ch==<span class="string">'-'</span>)&#123;_f=<span class="number">0</span>;_ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(_ch);_ch=getchar()) _x=_x*<span class="number">10</span>+_ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> _f?_x:-_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span></span>&#123;<span class="keyword">if</span> (_x&gt;=<span class="number">10</span>) write(_x/<span class="number">10</span>),<span class="built_in">putchar</span>(_x%<span class="number">10</span>+<span class="string">'0'</span>); <span class="keyword">else</span> <span class="built_in">putchar</span>(_x+<span class="string">'0'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x,<span class="keyword">char</span> _p)</span></span>&#123;<span class="keyword">if</span> (_x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),_x=-_x; write(_x); <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 50005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">namespace</span> xtree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> lazy;</span><br><span class="line">    ll sum;</span><br><span class="line">    node *ls, *rs;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node *&amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="literal">NULL</span>) u = <span class="keyword">new</span> node;</span><br><span class="line">    <span class="keyword">if</span> (ql == l &amp;&amp; r == qr) &#123;</span><br><span class="line">        u-&gt;lazy++, u-&gt;sum += r - l + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    u-&gt;sum += qr - ql + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (qr &lt;= mid)</span><br><span class="line">        insert(u-&gt;ls, l, mid, ql, qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ql &gt; mid)</span><br><span class="line">        insert(u-&gt;rs, mid + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        insert(u-&gt;ls, l, mid, ql, mid), insert(u-&gt;rs, mid + <span class="number">1</span>, r, mid + <span class="number">1</span>, qr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(node *u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql == l &amp;&amp; qr == r) <span class="keyword">return</span> u-&gt;sum;</span><br><span class="line">    ll ans = (qr - ql + <span class="number">1</span>) * u-&gt;lazy;</span><br><span class="line">    <span class="keyword">if</span> (qr &lt;= mid)</span><br><span class="line">        <span class="keyword">return</span> ans + query(u-&gt;ls, l, mid, ql, qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ql &gt; mid)</span><br><span class="line">        <span class="keyword">return</span> ans + query(u-&gt;rs, mid + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> query(u-&gt;ls, l, mid, ql, mid) + ans +</span><br><span class="line">               query(u-&gt;rs, mid + <span class="number">1</span>, r, mid + <span class="number">1</span>, qr);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;  <span class="comment">// namespace xtree</span></span><br><span class="line"><span class="keyword">namespace</span> ytree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    xtree::node *rt;</span><br><span class="line">&#125; tr[<span class="number">400005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    xtree::insert(tr[pos].rt, <span class="number">1</span>, n, ql, qr);</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid)</span><br><span class="line">        insert(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        insert(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span> l;</span><br><span class="line">    ll sum = xtree::query(tr[pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].rt, <span class="number">1</span>, n, ql, qr);</span><br><span class="line">    <span class="keyword">if</span> (sum &gt;= x)</span><br><span class="line">        <span class="keyword">return</span> query(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> query(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x - sum);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;  <span class="comment">// namespace ytree</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> op, l, r;</span><br><span class="line">    ll c;</span><br><span class="line">&#125; Q[maxn];</span><br><span class="line"><span class="keyword">int</span> H[maxn], tot;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = rd(), m = rd();</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> op = rd(), l = rd(), r = rd();</span><br><span class="line">        ll x = rd();</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>) ytree::insert(<span class="number">1</span>, -n, n, l, r, x);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">2</span>) wrt(ytree::query(<span class="number">1</span>, -n, n, l, r, x), <span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二逼平衡树"><a href="#二逼平衡树" class="headerlink" title="二逼平衡树"></a><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=3196" target="_blank" rel="noopener">二逼平衡树</a></h3><p>外层线段树，内层平衡树</p>
+<p>操作1 4 5就是在线段树上取出区间，然后平衡树内求答案，合并答案</p>
+<p>修改也没什么好讲的，和上一题比较相似</p>
+<p>操作2要<strong>二分答案</strong>，然后转化为1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	Author: zxy_hhhh</span></span><br><span class="line"><span class="comment">	date: 2018/12/03</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for (int x=int(a);x&lt;=(int)(b);x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x,a,b) for (int x=int(a);x&gt;=(int)(b);x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x,a) for (int x=hd[a];x;x=nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll _x=<span class="number">0</span>;<span class="keyword">int</span> _ch=getchar(),_f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(_ch)&amp;&amp;(_ch!=<span class="string">'-'</span>)&amp;&amp;(_ch!=EOF);_ch=getchar());</span><br><span class="line">	<span class="keyword">if</span> (_ch==<span class="string">'-'</span>)&#123;_f=<span class="number">0</span>;_ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">for</span>(;<span class="built_in">isdigit</span>(_ch);_ch=getchar()) _x=_x*<span class="number">10</span>+_ch-<span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">return</span> _f?_x:-_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span></span>&#123;<span class="keyword">if</span> (_x&gt;=<span class="number">10</span>) write(_x/<span class="number">10</span>),<span class="built_in">putchar</span>(_x%<span class="number">10</span>+<span class="string">'0'</span>); <span class="keyword">else</span> <span class="built_in">putchar</span>(_x+<span class="string">'0'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x,<span class="keyword">char</span> _p)</span></span>&#123;<span class="keyword">if</span> (_x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),_x=-_x; write(_x); <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 50005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ( (l + r) &gt;&gt; 1 </span></span><br><span class="line"><span class="keyword">int</span> a[maxn], n, m;</span><br><span class="line"><span class="keyword">namespace</span> xtree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">nil</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> sz, val, fix;</span><br><span class="line">    node *ls, *rs;</span><br><span class="line">    node(<span class="keyword">int</span> x) : sz(<span class="number">1</span>), val(x), fix(rand()) &#123; ls = rs = nil; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span> </span>&#123; sz = ls-&gt;sz + rs-&gt;sz + <span class="number">1</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    nil = <span class="keyword">new</span> node(<span class="number">0</span>);</span><br><span class="line">    nil-&gt;ls = nil-&gt;rs = nil;</span><br><span class="line">    nil-&gt;sz = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">split</span><span class="params">(node *now, <span class="keyword">int</span> k, node *&amp;x, node *&amp;y, <span class="keyword">int</span> op = <span class="number">1</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (now == nil) &#123;</span><br><span class="line">        x = y = nil;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (op == <span class="number">1</span> ? now-&gt;val &lt; k : now-&gt;ls-&gt;sz &lt; k) &#123;</span><br><span class="line">        x = now;</span><br><span class="line">        split(now-&gt;rs, (op == <span class="number">1</span> ? k : k - now-&gt;ls-&gt;sz - <span class="number">1</span>), x-&gt;rs, y, op);</span><br><span class="line">        x-&gt;update();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        y = now;</span><br><span class="line">        split(now-&gt;ls, k, x, y-&gt;ls, op);</span><br><span class="line">        y-&gt;update();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">node *<span class="title">merge</span><span class="params">(node *x, node *y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == nil) <span class="keyword">return</span> y;</span><br><span class="line">    <span class="keyword">if</span> (y == nil) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;fix &lt; y-&gt;fix) &#123;</span><br><span class="line">        x-&gt;rs = merge(x-&gt;rs, y);</span><br><span class="line">        <span class="keyword">return</span> x-&gt;update(), x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        y-&gt;ls = merge(x, y-&gt;ls);</span><br><span class="line">        <span class="keyword">return</span> y-&gt;update(), y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(node *&amp;rt, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    node *x, *y;</span><br><span class="line">    split(rt, val, x, y);</span><br><span class="line">    rt = merge(x, merge(<span class="keyword">new</span> node(val), y));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(node *&amp;rt, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    node *x, *y, *z;</span><br><span class="line">    split(rt, val, x, y);</span><br><span class="line">    split(y, <span class="number">1</span>, y, z, <span class="number">2</span>);</span><br><span class="line">    rt = merge(x, z);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">pre</span><span class="params">(node *&amp;rt, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    node *x, *y, *z;</span><br><span class="line">    <span class="keyword">int</span> ans;</span><br><span class="line">    split(rt, val, x, y), split(x, x-&gt;sz - <span class="number">1</span>, x, z, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (z == nil)</span><br><span class="line">        ans = -inf;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ans = (z-&gt;val);</span><br><span class="line">    rt = merge(x, merge(z, y));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">nxt</span><span class="params">(node *&amp;rt, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    node *x, *y, *z;</span><br><span class="line">    <span class="keyword">int</span> ans;</span><br><span class="line">    split(rt, val + <span class="number">1</span>, x, y), split(y, <span class="number">1</span>, y, z, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (y == nil)</span><br><span class="line">        ans = inf;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ans = y-&gt;val;</span><br><span class="line">    rt = merge(x, merge(y, z));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rank</span><span class="params">(node *&amp;rt, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    node *x, *y;</span><br><span class="line">    <span class="keyword">int</span> ans;</span><br><span class="line">    split(rt, val, x, y);</span><br><span class="line">    <span class="keyword">if</span> (x == nil)</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ans = x-&gt;sz;</span><br><span class="line">    rt = merge(x, y);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">&#125;  <span class="comment">// namespace xtree</span></span><br><span class="line"><span class="keyword">namespace</span> ytree &#123;</span><br><span class="line">xtree::node *tr[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">pre</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; ql || l &gt; qr) <span class="keyword">return</span> -inf;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= l &amp;&amp; r &lt;= qr) <span class="keyword">return</span> x = xtree::pre(tr[pos], x);</span><br><span class="line">    <span class="keyword">return</span> max(pre(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x),</span><br><span class="line">               pre(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">nxt</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; ql || l &gt; qr) <span class="keyword">return</span> inf;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= l &amp;&amp; r &lt;= qr) <span class="keyword">return</span> x = xtree::nxt(tr[pos], x);</span><br><span class="line">    <span class="keyword">return</span> min(nxt(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x),</span><br><span class="line">               nxt(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rank</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; ql || l &gt; qr) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= l &amp;&amp; r &lt;= qr) <span class="keyword">return</span> x = xtree::rank(tr[pos], x);</span><br><span class="line">    <span class="keyword">return</span> rank(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x) +</span><br><span class="line">           rank(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    xtree::del(tr[pos], a[x]), xtree::insert(tr[pos], v);</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid)</span><br><span class="line">        change(pos &lt;&lt; <span class="number">1</span>, l, mid, x, v);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        change(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, x, v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">atrank</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">100000000</span>, ans;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">if</span> (rank(<span class="number">1</span>, <span class="number">1</span>, n, L, R, mid) &lt; k)</span><br><span class="line">            ans = mid, l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    tr[pos] = xtree::nil;</span><br><span class="line">    rep(i, l, r) xtree::insert(tr[pos], a[i]);</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span>;</span><br><span class="line">    build(pos &lt;&lt; <span class="number">1</span>, l, mid), build(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line">&#125;  <span class="comment">// namespace ytree</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = rd();</span><br><span class="line">    m = rd();</span><br><span class="line">    xtree::init();</span><br><span class="line">    rep(i, <span class="number">1</span>, n) a[i] = rd();</span><br><span class="line">    ytree::build(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> op = rd();</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = rd(), r = rd(), x = rd();</span><br><span class="line">            wrt(ytree::rank(<span class="number">1</span>, <span class="number">1</span>, n, l, r, x) + <span class="number">1</span>, <span class="string">'\n'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = rd(), r = rd(), x = rd();</span><br><span class="line">            wrt(ytree::atrank(l, r, x), <span class="string">'\n'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = rd(), k = rd();</span><br><span class="line">            ytree::change(<span class="number">1</span>, <span class="number">1</span>, n, x, k);</span><br><span class="line">            a[x] = k;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = rd(), r = rd(), x = rd();</span><br><span class="line">            wrt(ytree::pre(<span class="number">1</span>, <span class="number">1</span>, n, l, r, x), <span class="string">'\n'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="number">5</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = rd(), r = rd(), x = rd();</span><br><span class="line">            wrt(ytree::nxt(<span class="number">1</span>, <span class="number">1</span>, n, l, r, x), <span class="string">'\n'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不勤劳的图书管理员"><a href="#不勤劳的图书管理员" class="headerlink" title="不勤劳的图书管理员"></a><a href="https://www.luogu.org/problemnew/show/P3759" target="_blank" rel="noopener">不勤劳的图书管理员</a></h3><p><del>暴力可以AC</del></p>
+<p>先算出不修改时的答案；</p>
+<p>对于的位置i贡献就是</p>
+<p>$\Sigma_{j=1}^{j&lt;i} a[j]+a[i] (v[j]&gt;v[i])$</p>
+<p>然后对于每一次修改，考虑对答案的影响就是y移到x减少的和x移到y增加的<br>而影响只会出现在(x,y)</p>
+<p>具体就是：</p>
+<p>(x,y)对x产生的逆序对，y对(x,y)产生的逆序对会失去</p>
+<p>(x,y)对y产生的逆序对，x对(x,y)产生的逆序对会增加入答案</p>
+<p>如何维护a[i]+a[j]?</p>
+<p>用树套树维护<strong>(x,y)大于等于x的数</strong>的<strong>个数</strong>和<strong>这些数的和</strong></p>
+<hr>
+<p>不能用指针，不然空间会GG</p>
+<p>要外层<strong>树状数组</strong>内层<strong>线段树</strong>，不然空间GG</p>
+<p>外层<strong>线段树</strong>内层<strong>平衡树</strong>空间OK的，不过时间就呵呵了<br><del>机房某大佬卡了一上午常之后彻底弃疗，写了暴力</del></p>
+<hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Author: zxy_hhhh</span></span><br><span class="line"><span class="comment">    date: 2018/12/05</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for (int x=int(a);x&lt;=(int)(b);x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x,a,b) for (int x=int(a);x&gt;=(int)(b);x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x,a) for (int x=hd[a];x;x=nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll _x=<span class="number">0</span>;<span class="keyword">int</span> _ch=getchar(),_f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(_ch)&amp;&amp;(_ch!=<span class="string">'-'</span>)&amp;&amp;(_ch!=EOF);_ch=getchar());</span><br><span class="line">    <span class="keyword">if</span> (_ch==<span class="string">'-'</span>)&#123;_f=<span class="number">0</span>;_ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(_ch);_ch=getchar()) _x=_x*<span class="number">10</span>+_ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> _f?_x:-_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span></span>&#123;<span class="keyword">if</span> (_x&gt;=<span class="number">10</span>) write(_x/<span class="number">10</span>),<span class="built_in">putchar</span>(_x%<span class="number">10</span>+<span class="string">'0'</span>); <span class="keyword">else</span> <span class="built_in">putchar</span>(_x+<span class="string">'0'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x,<span class="keyword">char</span> _p)</span></span>&#123;<span class="keyword">if</span> (_x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),_x=-_x; write(_x); <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lb(x) (x &amp; -x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 50005</span></span><br><span class="line"><span class="keyword">int</span> n, a[maxn], w[maxn], m, Ans;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Mod</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="keyword">return</span> x &lt; <span class="number">0</span> ? (x + mod) : (x &gt;= mod ? x - mod : x); &#125;</span><br><span class="line"><span class="keyword">namespace</span> xtree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> sum,ls,rs;</span><br><span class="line">&#125;tr[<span class="number">20000000</span>];</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!u) u = ++cnt;</span><br><span class="line">    tr[u].sum = Mod(tr[u].sum + k);</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid)</span><br><span class="line">        insert(tr[u].ls, l, mid, x, k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        insert(tr[u].rs, mid + <span class="number">1</span>, r, x, k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!u) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; ql || l &gt; qr) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= l &amp;&amp; r &lt;= qr) <span class="keyword">return</span> tr[u].sum;</span><br><span class="line">    <span class="keyword">return</span> (query(tr[u].ls, l, mid, ql, qr) + query(tr[u].rs, mid + <span class="number">1</span>, r, ql, qr)) %</span><br><span class="line">           mod;</span><br><span class="line">&#125;</span><br><span class="line">&#125;  <span class="comment">// namespace xtree</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> tr[maxn];</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (; x &lt;= n; x += lb(x)) xtree::insert(tr[x], <span class="number">1</span>, n, k, val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; x; x -= lb(x)) ans = Mod(ans + xtree::query(tr[x], <span class="number">1</span>, n, L, R));</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Mod(query(R, l, r) - query(L - <span class="number">1</span>, l, r));</span><br><span class="line">    &#125;</span><br><span class="line">&#125; tr1, tr2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = rd(), m = rd();</span><br><span class="line">    rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">        w[i] = rd(), a[i] = rd();</span><br><span class="line">        tr1.update(i, w[i], a[i]), tr2.update(i, w[i], <span class="number">1</span>);</span><br><span class="line">        Ans = Mod(Ans + tr1.query(i - <span class="number">1</span>, w[i], n)),</span><br><span class="line">        Ans = Mod(Ans + <span class="number">1l</span>l * tr2.query(i - <span class="number">1</span>, w[i], n) * a[i] % mod);</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = rd(), y = rd();</span><br><span class="line">        <span class="keyword">if</span> (x &gt; y) swap(x, y);</span><br><span class="line">        <span class="keyword">if</span> (x==y) &#123;wrt(Ans,<span class="string">'\n'</span>);<span class="keyword">continue</span>;&#125;</span><br><span class="line">        Ans = Mod(Ans - tr1.query(x + <span class="number">1</span>, y - <span class="number">1</span>, w[y], n));</span><br><span class="line">        Ans = Mod(Ans + tr1.query(x + <span class="number">1</span>, y - <span class="number">1</span>, w[x], n));</span><br><span class="line">        Ans = Mod(Ans - tr1.query(x + <span class="number">1</span>, y - <span class="number">1</span>, <span class="number">1</span>, w[x]));</span><br><span class="line">        Ans = Mod(Ans + tr1.query(x + <span class="number">1</span>, y - <span class="number">1</span>, <span class="number">1</span>, w[y]));</span><br><span class="line">        Ans = Mod(Ans - <span class="number">1l</span>l * tr2.query(x + <span class="number">1</span>, y - <span class="number">1</span>, w[y], n) * a[y] % mod);</span><br><span class="line">        Ans = Mod(Ans + <span class="number">1l</span>l * tr2.query(x + <span class="number">1</span>, y - <span class="number">1</span>, w[x], n) * a[x] % mod);</span><br><span class="line">        Ans = Mod(Ans - <span class="number">1l</span>l * tr2.query(x + <span class="number">1</span>, y - <span class="number">1</span>, <span class="number">1</span>, w[x]) * a[x] % mod);</span><br><span class="line">        Ans = Mod(Ans + <span class="number">1l</span>l * tr2.query(x + <span class="number">1</span>, y - <span class="number">1</span>, <span class="number">1</span>, w[y]) * a[y] % mod);</span><br><span class="line">        <span class="keyword">if</span> (w[x] &gt; w[y])</span><br><span class="line">            Ans -= a[x] + a[y];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            Ans += a[x] + a[y];</span><br><span class="line">        Ans=Mod(Ans);</span><br><span class="line">        tr1.update(x, w[x], -a[x]), tr1.update(x, w[y], a[y]);</span><br><span class="line">        tr1.update(y, w[y], -a[y]), tr1.update(y, w[x], a[x]);</span><br><span class="line">        tr2.update(x, w[x], <span class="number">-1</span>), tr2.update(x, w[y], <span class="number">1</span>);</span><br><span class="line">        tr2.update(y, w[y], <span class="number">-1</span>), tr2.update(y, w[x], <span class="number">1</span>);</span><br><span class="line">        swap(w[x], w[y]), swap(a[x], a[y]);</span><br><span class="line">        wrt(Ans, <span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//wrt(xtree::cnt,'\n');</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先写到这里吧</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2018/12/05/tree-tao-tree/">树套树</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">zxy_hhhh</a></p>
+        <p><span>Created:</span>2018-12-05, 13:26:40</p>
+        <p><span>Updated:</span>2018-12-05, 15:52:25</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2018/12/05/tree-tao-tree/" title="树套树">http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/</a>
+            <span class="copy-path" data-clipboard-text="From http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/　　By zxy_hhhh" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/15/test/">
+                    公告
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要思想"><span class="toc-number">1.</span> <span class="toc-text">主要思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#来几个-栗子"><span class="toc-number">2.</span> <span class="toc-text">来几个 栗子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#K大数查询"><span class="toc-number">2.1.</span> <span class="toc-text">K大数查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二逼平衡树"><span class="toc-number">2.2.</span> <span class="toc-text">二逼平衡树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不勤劳的图书管理员"><span class="toc-number">2.3.</span> <span class="toc-text">不勤劳的图书管理员</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"树套树　| zxy_hhhh's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+  
+    <div id="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify:false, 
+    verify:false, 
+    appId: 'Khnd1pPzVROuplkyEUCrXrAG-gzGzoHsz',
+    appKey: 'aljALTlRBKbw2a14Czm1OxlV',
+    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
+</script>
+    
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/11/15/test/" title="Next: 公告">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/05/tree-tao-tree/">树套树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/15/test/">公告</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2018 zxy_hhhh
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

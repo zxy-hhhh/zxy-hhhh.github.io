@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2018-12-04T00:57:13.484Z</updated>
+  <updated>2018-12-05T07:52:25.018Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>树套树</title>
+    <link href="http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/"/>
+    <id>http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/</id>
+    <published>2018-12-05T05:26:40.000Z</published>
+    <updated>2018-12-05T07:52:25.018Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近写了点树套树，感觉也没那么可怕&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/tags/OI/"/>
+    
+      <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树套树" scheme="http://zxy-hhhh.cn/tags/%E6%A0%91%E5%A5%97%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>公告</title>
     <link href="http://zxy-hhhh.cn/2018/11/15/test/"/>
     <id>http://zxy-hhhh.cn/2018/11/15/test/</id>
     <published>2018-11-15T07:46:04.000Z</published>
-    <updated>2018-12-04T00:57:13.484Z</updated>
+    <updated>2018-12-05T07:57:55.809Z</updated>
     
     <summary type="html">
     
@@ -29,7 +51,7 @@
       
         
         
-          &lt;h1 id=&quot;12-4-8-54-update&quot;&gt;&lt;a href=&quot;#12-4-8-54-update&quot; class=&quot;headerlink&quot; title=&quot;12.4 8:54 update&quot;&gt;&lt;/a&gt;12.4 8:54 update&lt;/h1&gt;&lt;h2
+          &lt;h1 id=&quot;暂时当更新日志用&quot;&gt;&lt;a href=&quot;#暂时当更新日志用&quot; class=&quot;headerlink&quot; title=&quot;暂时当更新日志用&quot;&gt;&lt;/a&gt;暂时当更新日志用&lt;/h1&gt;&lt;h2 id=&quot;12-4-8-54-update&quot;&gt;&lt;a
         
       
     
