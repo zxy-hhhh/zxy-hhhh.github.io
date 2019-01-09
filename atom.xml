@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2019-01-09T07:09:42.508Z</updated>
+  <updated>2019-01-09T10:10:59.842Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小C的独立集</title>
+    <link href="http://zxy-hhhh.cn/2019/01/09/bzoj4316/"/>
+    <id>http://zxy-hhhh.cn/2019/01/09/bzoj4316/</id>
+    <published>2019-01-09T10:05:31.000Z</published>
+    <updated>2019-01-09T10:10:59.842Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;圆方树入门&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="DP" scheme="http://zxy-hhhh.cn/tags/DP/"/>
+    
+      <category term="圆方树" scheme="http://zxy-hhhh.cn/tags/%E5%9C%86%E6%96%B9%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>铁人两项</title>
@@ -41,11 +63,12 @@
     <link href="http://zxy-hhhh.cn/2019/01/08/yuanfangshu/"/>
     <id>http://zxy-hhhh.cn/2019/01/08/yuanfangshu/</id>
     <published>2019-01-08T12:58:15.000Z</published>
-    <updated>2019-01-09T07:11:45.355Z</updated>
+    <updated>2019-01-09T11:14:29.596Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;圆方树题的整理和一个模板&lt;/p&gt;
+      &lt;p&gt;出题人把序列上的题加个树剖放到树上是错误的&lt;del&gt;应该加个圆方树放到仙人掌上&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;圆方树题的整理和一个模板&lt;/p&gt;
     
     </summary>
     
