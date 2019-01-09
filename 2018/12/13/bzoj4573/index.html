@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zxy_hhhh" />
+
+
+
+<meta name="description" content="有趣的LCT题">
+<meta name="keywords" content="数据结构,LCT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj4573">
+<meta property="og:url" content="http://zxy-hhhh.cn/2018/12/13/bzoj4573/index.html">
+<meta property="og:site_name" content="zxy_hhhh&#39;s blog">
+<meta property="og:description" content="有趣的LCT题">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-06T10:39:45.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bzoj4573">
+<meta name="twitter:description" content="有趣的LCT题">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="zxy_hhhh&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>bzoj4573 | zxy_hhhh&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zxy_hhhh</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCT/">LCT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树套树/">树套树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树链剖分/">树链剖分</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/zykykyk">zyk</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/Shallowy">hje</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://dilute.coding.me">dilute</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://https://xcfubuki.cn">fubuki</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">浙江OIer,fighting for dream</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zxy_hhhh</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zxy_hhhh</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-bzoj4573" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/13/bzoj4573/" class="article-date">
+      <time datetime="2018-12-13T14:06:46.000Z" itemprop="datePublished">2018-12-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bzoj4573
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LCT/">LCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>有趣的LCT题<br><a id="more"></a></p>
+<h2 id="写在前面的一些结论："><a href="#写在前面的一些结论：" class="headerlink" title="写在前面的一些结论："></a>写在前面的一些结论：</h2><ol>
+<li><p>合法的$2$操作只会在一段连续的区间内发生，所以合法$2$操作也只会在一段区间内发生，因此我们可以把更换生长节点的区间，和加点区间取并，使$2$操作一定合法</p>
+</li>
+<li><p>如果$2$操作一定合法，加点操作区间从l~r变为1~n并不影响答案</p>
+</li>
+<li><p>一个询问在该询问进入时处理，和之后处理，答案并不改变，并且只有涉及到该树的操作才会对这个询问产生影响</p>
+</li>
+</ol>
+<p><del>结论是显然的</del></p>
+<p>知道这些之后，来考虑如何解决；</p>
+<h2 id="一个想法"><a href="#一个想法" class="headerlink" title="一个想法"></a>一个想法</h2><p>可以基于上面结论，产生一个<del>愚蠢的</del>想法</p>
+<p>设$x$为$2$操作后的生长节点，$y$为之前的</p>
+<p>将$2$操作拆成两次：</p>
+<ol>
+<li>在$l$处，将之后加入所有点，换到$x$下面</li>
+<li>在$r+1$处,将之后加入所有点，换回$y$下面</li>
+</ol>
+<p>然后将询问和$2$操作按位置排序，从1~n扫一遍，依次处理就得到了$O(n^{2})$的优秀做法</p>
+<h2 id="那么如何优化"><a href="#那么如何优化" class="headerlink" title="那么如何优化"></a>那么如何优化</h2><h3 id="虚点"><a href="#虚点" class="headerlink" title="虚点!!!"></a>虚点!!!</h3><p>对每一个$2$操作建一个虚点，每个虚点的父节点是前一个虚点，第一个虚点的父亲是1</p>
+<p>每一次加点就加到当前最后一个虚点下面就好了。</p>
+<p>每次移动就直接将该$2$操作对应的虚点及其子树移到新的生长节点下<del>然而还是T</del></p>
+<h3 id="统计答案"><a href="#统计答案" class="headerlink" title="统计答案"></a>统计答案</h3><p>我们让虚点权值为0，实点为1</p>
+<p>设一个点i到根路径上权值和为 $S_{i}$(包含自身权值)</p>
+<p>$dis(u,v)=S_{u}+S_{v}-2S_{lca}$</p>
+<p>大家举几个栗子，想象一下，就知道这是对的。<del>我不会证</del></p>
+<h3 id="LCT大法吼！！！"><a href="#LCT大法吼！！！" class="headerlink" title="LCT大法吼！！！"></a>LCT大法吼！！！</h3><p>移动子树相当于换父亲，LCT就可以了。</p>
+<p>但是此处<strong>LCT 不能换根</strong>，因为有虚点，不同于普通树上路径，所以根的位置对答案会产生影响。</p>
+<p>此处cut操作一定是儿子cut父亲，所以直接cut掉就可以了，like this<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access(u);splay(u);fa[son[u][<span class="number">0</span>]]=<span class="number">0</span>,son[u][<span class="number">0</span>]=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<p>而link操作也一定是一颗树的根去link，所以也直接link就好了，像这样<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access(v),splay(v),fa[v]=u;</span><br></pre></td></tr></table></figure></p>
+<p>然后就愉快的A了此题，时间复杂度$O(nlogn)$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Author: zxy_hhhh</span></span><br><span class="line"><span class="comment">    date: 2018/12/07</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x, a, b) for (int x = int(a); x &lt;= (int)(b); x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x, a, b) for (int x = int(a); x &gt;= (int)(b); x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x, a) for (int x = hd[a]; x; x = nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ll _x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> _ch = getchar(), _f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; !<span class="built_in">isdigit</span>(_ch) &amp;&amp; (_ch != <span class="string">'-'</span>) &amp;&amp; (_ch != EOF); _ch = getchar())</span><br><span class="line">        ;</span><br><span class="line">    <span class="keyword">if</span> (_ch == <span class="string">'-'</span>) &#123;</span><br><span class="line">        _f = <span class="number">0</span>;</span><br><span class="line">        _ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">isdigit</span>(_ch); _ch = getchar()) _x = _x * <span class="number">10</span> + _ch - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> _f ? _x : -_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_x &gt;= <span class="number">10</span>)</span><br><span class="line">        write(_x / <span class="number">10</span>), <span class="built_in">putchar</span>(_x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">putchar</span>(_x + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x, <span class="keyword">char</span> _p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>), _x = -_x;</span><br><span class="line">    write(_x);</span><br><span class="line">    <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 400005</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LCT</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> son[maxn][<span class="number">2</span>], val[maxn], sum[maxn], fa[maxn], cnt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isroot</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> son[fa[x]][<span class="number">1</span>] != x &amp;&amp; son[fa[x]][<span class="number">0</span>] != x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        sum[x] = sum[son[x][<span class="number">0</span>]] + sum[son[x][<span class="number">1</span>]] + val[x];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> y = fa[x], z = fa[y], d = son[y][<span class="number">1</span>] == x;</span><br><span class="line">        <span class="keyword">if</span> (!isroot(y)) son[z][son[z][<span class="number">1</span>] == y] = x;</span><br><span class="line">        fa[y] = x, fa[x] = z;</span><br><span class="line">        fa[son[x][!d]] = y, son[y][d] = son[x][!d];</span><br><span class="line">        son[x][!d] = y;</span><br><span class="line">        update(y), update(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (; !isroot(x);) &#123;</span><br><span class="line">            <span class="keyword">int</span> y = fa[x], z = fa[y];</span><br><span class="line">            <span class="keyword">if</span> (!isroot(y))</span><br><span class="line">                (son[y][<span class="number">1</span>] == x) ^ (son[z][<span class="number">1</span>] == y) ? rotate(x) : rotate(y);</span><br><span class="line">            rotate(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">access</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; x; t = x, x = fa[x]) splay(x), son[x][<span class="number">1</span>] = t, update(x);</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123; fa[v] = u; &#125;<span class="comment">//因为先有cut所以可以不access</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">cut</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">        access(u);</span><br><span class="line">        splay(u);</span><br><span class="line">        fa[son[u][<span class="number">0</span>]] = <span class="number">0</span>, son[u][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dis</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Sum = <span class="number">0</span>;</span><br><span class="line">        access(x);</span><br><span class="line">        splay(x);</span><br><span class="line">        Sum += sum[x];</span><br><span class="line">        <span class="keyword">int</span> lca = access(y);</span><br><span class="line">        splay(y);</span><br><span class="line">        Sum += sum[y];</span><br><span class="line">        access(lca);</span><br><span class="line">        splay(lca);</span><br><span class="line">        Sum -= sum[lca] &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> Sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">changefa</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span>  <span class="comment">// xxc's fahter was hje before,but now his father is me</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cut(x);</span><br><span class="line">        link(y, x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        access(x);</span><br><span class="line">        splay(x);</span><br><span class="line">        <span class="keyword">return</span> son[x][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">new_node</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        sum[++cnt] = x, val[cnt] = x;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; lct;</span><br><span class="line"><span class="keyword">int</span> to[maxn];</span><br><span class="line"><span class="keyword">int</span> cl[maxn], cr[maxn], ans[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m, p, r, cnt, QwQ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> op, w, x, y, id;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Query &amp;B) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (w &lt; B.w) || (w == B.w &amp;&amp; op &lt; B.op);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; Q[maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = rd(), m = rd();</span><br><span class="line">    to[<span class="number">1</span>] = lct.new_node(<span class="number">1</span>);</span><br><span class="line">    lct.link(<span class="number">1</span>, lct.new_node(<span class="number">0</span>));</span><br><span class="line">    cl[<span class="number">1</span>] = <span class="number">1</span>, cr[<span class="number">1</span>] = n;</span><br><span class="line">    <span class="keyword">int</span> now = <span class="number">2</span>, w = <span class="number">1</span>;</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> op = rd();</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">0</span>) &#123;</span><br><span class="line">            cl[++w] = rd(), cr[w] = rd();</span><br><span class="line">            lct.link(now, to[w] = lct.new_node(<span class="number">1</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = rd(), r = rd(), x = rd(), pre = now;</span><br><span class="line">            l = <span class="built_in">std</span>::max(l, cl[x]), r = <span class="built_in">std</span>::min(r, cr[x]);</span><br><span class="line">            <span class="keyword">if</span> (l &gt; r) <span class="keyword">continue</span>;</span><br><span class="line">            now = lct.new_node(<span class="number">0</span>);</span><br><span class="line">            Q[++cnt].op = <span class="number">1</span>, Q[cnt].w = l, Q[cnt].x = now, Q[cnt].y = to[x];</span><br><span class="line">            Q[++cnt].op = <span class="number">1</span>, Q[cnt].w = r + <span class="number">1</span>, Q[cnt].x = now, Q[cnt].y = pre;</span><br><span class="line">            lct.link(pre, now);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Q[++cnt].w = rd();</span><br><span class="line">            <span class="keyword">int</span> x = rd(), y = rd();</span><br><span class="line">            Q[cnt].op = <span class="number">2</span>, Q[cnt].x = x, Q[cnt].y = y;</span><br><span class="line">            Q[cnt].id = ++QwQ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::sort(Q + <span class="number">1</span>, Q + <span class="number">1</span> + cnt);</span><br><span class="line">    rep(i, <span class="number">1</span>, cnt) &#123;</span><br><span class="line">        <span class="keyword">if</span> (Q[i].op == <span class="number">1</span>)</span><br><span class="line">            lct.changefa(Q[i].x, Q[i].y);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ans[Q[i].id] = lct.dis(to[Q[i].x], to[Q[i].y]);</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i, <span class="number">1</span>, QwQ) wrt(ans[i], <span class="string">'\n'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2018/12/13/bzoj4573/">bzoj4573</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">zxy_hhhh</a></p>
+        <p><span>Created:</span>2018-12-13, 22:06:46</p>
+        <p><span>Updated:</span>2019-01-06, 18:39:45</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2018/12/13/bzoj4573/" title="bzoj4573">http://zxy-hhhh.cn/2018/12/13/bzoj4573/</a>
+            <span class="copy-path" data-clipboard-text="From http://zxy-hhhh.cn/2018/12/13/bzoj4573/　　By zxy_hhhh" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/01/06/luogu-3676/">
+                    luogu-3676
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/12/06/about-zxy/">
+                    about-zxy
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面的一些结论："><span class="toc-number">1.</span> <span class="toc-text">写在前面的一些结论：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个想法"><span class="toc-number">2.</span> <span class="toc-text">一个想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#那么如何优化"><span class="toc-number">3.</span> <span class="toc-text">那么如何优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚点"><span class="toc-number">3.1.</span> <span class="toc-text">虚点!!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#统计答案"><span class="toc-number">3.2.</span> <span class="toc-text">统计答案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LCT大法吼！！！"><span class="toc-number">3.3.</span> <span class="toc-text">LCT大法吼！！！</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"bzoj4573　| zxy_hhhh's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+  
+    <div id="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify:false, 
+    verify:false, 
+    appId: 'Khnd1pPzVROuplkyEUCrXrAG-gzGzoHsz',
+    appKey: 'aljALTlRBKbw2a14Czm1OxlV',
+    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
+</script>
+    
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/01/06/luogu-3676/" title="Pre: luogu-3676">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/12/06/about-zxy/" title="Next: about-zxy">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/08/yuanfangshu/">yuanfangshu</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/06/luogu-3676/">luogu-3676</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/13/bzoj4573/">bzoj4573</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/06/about-zxy/">about-zxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/05/tree-tao-tree/">初学树套树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/15/test/">公告</a></li><li class="post-list-item"><a class="post-list-link" href="/1028/12/06/my-ss/">ss</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2018-2019 zxy_hhhh
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
