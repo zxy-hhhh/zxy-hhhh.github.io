@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://zxy-hhhh.cn/2019/01/08/yuanfangshu/</loc>
-    <lastmod>2019-01-09T00:59:48.537Z</lastmod>
+    <lastmod>2019-01-09T07:11:45.355Z</lastmod>
     <data>
         <display>
-        <title>yuanfangshu</title>
+        <title>圆方树</title>
         <pubTime>2019-01-08T12:58:15.000Z</pubTime>
         
         <tag>图论</tag>
@@ -21,13 +21,74 @@
 
     
   <url>
-    <loc>http://zxy-hhhh.cn/2018/12/06/about-zxy/</loc>
-    <lastmod>2019-01-09T00:37:09.674Z</lastmod>
+    <loc>http://zxy-hhhh.cn/2019/01/09/luogu-4630/</loc>
+    <lastmod>2019-01-09T07:09:42.508Z</lastmod>
     <data>
         <display>
-        <title>about-zxy</title>
-        <pubTime>2018-12-06T07:40:12.000Z</pubTime>
+        <title>铁人两项</title>
+        <pubTime>2019-01-09T07:06:54.000Z</pubTime>
         
+        <tag>图论</tag>
+         
+        <tag>圆方树</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zxy-hhhh.cn/2018/12/03/bzoj3196/</loc>
+    <lastmod>2019-01-09T07:05:44.716Z</lastmod>
+    <data>
+        <display>
+        <title>二逼平衡树</title>
+        <pubTime>2018-12-03T06:39:30.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>树套树</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zxy-hhhh.cn/2018/12/03/luogu-3759/</loc>
+    <lastmod>2019-01-09T07:04:00.929Z</lastmod>
+    <data>
+        <display>
+        <title>K大数查询</title>
+        <pubTime>2018-12-03T06:39:58.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>树套树</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zxy-hhhh.cn/2018/12/13/bzoj4573/</loc>
+    <lastmod>2019-01-09T07:02:15.234Z</lastmod>
+    <data>
+        <display>
+        <title>大森林</title>
+        <pubTime>2018-12-13T14:06:46.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>LCT</tag>
+         
          
            
         </display>
@@ -37,10 +98,10 @@
     
   <url>
     <loc>http://zxy-hhhh.cn/2019/01/06/luogu-3676/</loc>
-    <lastmod>2019-01-06T11:20:01.545Z</lastmod>
+    <lastmod>2019-01-09T06:57:21.119Z</lastmod>
     <data>
         <display>
-        <title>luogu-3676</title>
+        <title>小清新数据结构题</title>
         <pubTime>2019-01-06T10:38:42.000Z</pubTime>
         
         <tag>数据结构</tag>
@@ -57,16 +118,16 @@
 
     
   <url>
-    <loc>http://zxy-hhhh.cn/2018/12/13/bzoj4573/</loc>
-    <lastmod>2019-01-06T10:39:45.926Z</lastmod>
+    <loc>http://zxy-hhhh.cn/2018/12/05/bzoj3110/</loc>
+    <lastmod>2019-01-09T06:56:29.066Z</lastmod>
     <data>
         <display>
-        <title>bzoj4573</title>
-        <pubTime>2018-12-13T14:06:46.000Z</pubTime>
+        <title>不勤劳的图书管理员</title>
+        <pubTime>2018-12-05T06:39:39.000Z</pubTime>
         
         <tag>数据结构</tag>
          
-        <tag>LCT</tag>
+        <tag>树套树</tag>
          
          
            
@@ -77,7 +138,7 @@
     
   <url>
     <loc>http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/</loc>
-    <lastmod>2019-01-06T10:39:28.870Z</lastmod>
+    <lastmod>2019-01-09T06:51:52.886Z</lastmod>
     <data>
         <display>
         <title>初学树套树</title>
@@ -87,6 +148,21 @@
          
         <tag>树套树</tag>
          
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zxy-hhhh.cn/2018/12/06/about-zxy/</loc>
+    <lastmod>2019-01-09T00:37:09.674Z</lastmod>
+    <data>
+        <display>
+        <title>about-zxy</title>
+        <pubTime>2018-12-06T07:40:12.000Z</pubTime>
+        
          
            
         </display>

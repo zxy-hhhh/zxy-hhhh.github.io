@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="最近写了点树套树，感觉也没那么可怕">
-<meta name="keywords" content="数据结构,树套树">
+<meta name="description" content="圆方树入门">
+<meta name="keywords" content="图论,圆方树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初学树套树">
-<meta property="og:url" content="http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/index.html">
+<meta property="og:title" content="铁人两项">
+<meta property="og:url" content="http://zxy-hhhh.cn/2019/01/09/luogu-4630/index.html">
 <meta property="og:site_name" content="zxy_hhhh&#39;s blog">
-<meta property="og:description" content="最近写了点树套树，感觉也没那么可怕">
+<meta property="og:description" content="圆方树入门">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-09T06:51:52.886Z">
+<meta property="og:updated_time" content="2019-01-09T07:09:42.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初学树套树">
-<meta name="twitter:description" content="最近写了点树套树，感觉也没那么可怕">
+<meta name="twitter:title" content="铁人两项">
+<meta name="twitter:description" content="圆方树入门">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>初学树套树 | zxy_hhhh&#39;s blog</title>
+<title>铁人两项 | zxy_hhhh&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -269,11 +269,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-tree-tao-tree" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-luogu-4630" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/05/tree-tao-tree/" class="article-date">
-      <time datetime="2018-12-05T05:26:40.000Z" itemprop="datePublished">2018-12-05</time>
+      <a href="/2019/01/09/luogu-4630/" class="article-date">
+      <time datetime="2019-01-09T07:06:54.000Z" itemprop="datePublished">2019-01-09</time>
 </a>
 
 
@@ -288,7 +288,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      初学树套树
+      铁人两项
     </h1>
   
 
@@ -299,7 +299,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树套树/">树套树</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论/">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/圆方树/">圆方树</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -309,12 +309,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>最近写了点树套树，感觉也没那么可怕</p>
+        <p>圆方树入门</p>
 <a id="more"></a>
-<h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><p>很多用于动态维护区间的一些东西，比如：区间内大于等于x的数的个数、区间前驱后继等等</p>
-<p>主要思想很简单，就是 对外层树的<strong>每一个节点</strong>建一个内层树</p>
-<p>具体实现方式可见例题</p>
-<h2 id="来几个-栗子"><a href="#来几个-栗子" class="headerlink" title="来几个 栗子"></a>来几个 栗子</h2><p><a href="http://zxy-hhhh.cn/2018/12/03/luogu-3759/">K大数查询</a><br><a href="http://zxy-hhhh.cn/2018/12/03/bzoj3196/">二逼平衡树</a><br><a href="http://zxy-hhhh.cn/2018/12/05/bzoj3110/">不勤劳的图书管理员</a><br>先写到这里吧</p>
+<p><a href="https://www.luogu.org/problemnew/show/P4630" target="_blank" rel="noopener">题目链接</a></p>
+<p>转化一下题意，等价于求$\sum\limits_x\sum\limits_y S_{x,y}$</p>
+<p>$S_{x,y}$表示$x$到$y$的所有<strong>不经过重复点的路径</strong>可能经过的点的个数</p>
+<p>建出圆方树，方点权值为点双大小，圆点权值为$-1$，问题就变成了求树上所有<strong>圆点</strong>对的<strong>路径长度</strong>之和</p>
+<p>路径长度定义为树上两点路径经过点的权值和（包含这两点）。</p>
+<p>每个点的贡献就是经过它的路径数$×$它的权值</p>
+<p><strong>注意：图不一定联通</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x,a,b) for (int x=int(a);x&lt;=(int)(b);x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x,a,b) for (int x=int(a);x&gt;=(int)(b);x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x,a) for (int x=hd[a];x;x=nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll _x=<span class="number">0</span>;<span class="keyword">int</span> _ch=getchar(),_f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(_ch)&amp;&amp;(_ch!=<span class="string">'-'</span>)&amp;&amp;(_ch!=EOF);_ch=getchar());</span><br><span class="line">    <span class="keyword">if</span> (_ch==<span class="string">'-'</span>)&#123;_f=<span class="number">0</span>;_ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(_ch);_ch=getchar()) _x=_x*<span class="number">10</span>+_ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> _f?_x:-_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span></span>&#123;<span class="keyword">if</span> (_x&gt;=<span class="number">10</span>) write(_x/<span class="number">10</span>),<span class="built_in">putchar</span>(_x%<span class="number">10</span>+<span class="string">'0'</span>); <span class="keyword">else</span> <span class="built_in">putchar</span>(_x+<span class="string">'0'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x,<span class="keyword">char</span> _p)</span></span>&#123;<span class="keyword">if</span> (_x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),_x=-_x; write(_x); <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 600005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxm 600005</span></span><br><span class="line"><span class="keyword">int</span> tot,n,m;</span><br><span class="line"><span class="keyword">namespace</span> Tree</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> nx[maxn&lt;&lt;<span class="number">1</span>],to[maxn&lt;&lt;<span class="number">1</span>],hd[maxn&lt;&lt;<span class="number">1</span>],cnt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span>&#123;nx[++cnt]=hd[u],to[cnt]=v,hd[u]=cnt;&#125;</span><br><span class="line">    <span class="keyword">int</span> g[maxn&lt;&lt;<span class="number">1</span>],mx;</span><br><span class="line">    ll ans;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum=u&lt;=n;</span><br><span class="line">        cross(i,u) <span class="keyword">if</span> (to[i]!=fa) &#123;</span><br><span class="line">            <span class="keyword">int</span> x=dfs(to[i],u);</span><br><span class="line">            ans+=<span class="number">2l</span>l*g[u]*x*sum;</span><br><span class="line">            sum+=x;</span><br><span class="line">        &#125;</span><br><span class="line">        ans+=<span class="number">2l</span>l*g[u]*sum*(mx-sum);</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],low[maxn],id;</span><br><span class="line"><span class="keyword">int</span> sta[maxn],top;  </span><br><span class="line"><span class="keyword">int</span> nx[maxm],to[maxm],hd[maxn],cnt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span>&#123;nx[++cnt]=hd[u],to[cnt]=v,hd[u]=cnt;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">    Tree::mx++;</span><br><span class="line">    dfn[u]=low[u]=++id;</span><br><span class="line">    sta[++top]=u;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=hd[u];i;i=nx[i]) <span class="keyword">if</span> (to[i]!=fa) &#123;</span><br><span class="line">        <span class="keyword">int</span> v=to[i];</span><br><span class="line">        <span class="keyword">if</span> (!dfn[v])&#123;</span><br><span class="line">            tarjan(v,u);</span><br><span class="line">            low[u]=min(low[u],low[v]);</span><br><span class="line">            <span class="keyword">if</span> (low[v]&gt;=dfn[u]) &#123;   <span class="comment">//对于一般图，此处为&gt;=；对于仙人掌，此处为==</span></span><br><span class="line">                tot++;Tree::g[n+tot]=<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">while</span>(sta[top]!=v) </span><br><span class="line">                    Tree::g[n+tot]++,Tree::add(n+tot,sta[top--]);</span><br><span class="line">                Tree::add(n+tot,sta[top--]);</span><br><span class="line">                Tree::add(u,n+tot);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> low[u]=min(low[u],dfn[v]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    rep(i,<span class="number">1</span>,n) Tree::g[i]=<span class="number">-1</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,n) <span class="keyword">if</span> (!dfn[i]) &#123;</span><br><span class="line">        Tree::mx=<span class="number">0</span>;</span><br><span class="line">        tarjan(i,<span class="number">0</span>),Tree::dfs(i,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=rd(),m=rd();</span><br><span class="line">    rep(i,<span class="number">1</span>,m) &#123;</span><br><span class="line">        <span class="keyword">int</span> x=rd(),y=rd();</span><br><span class="line">        add(x,y),add(y,x);</span><br><span class="line">    &#125;</span><br><span class="line">    init(n);</span><br><span class="line">    wrt(Tree::ans,<span class="string">'\n'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -323,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2018/12/05/tree-tao-tree/">初学树套树</a></p>
+        <p><span>Title:</span><a href="/2019/01/09/luogu-4630/">铁人两项</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">zxy_hhhh</a></p>
-        <p><span>Created:</span>2018-12-05, 13:26:40</p>
-        <p><span>Updated:</span>2019-01-09, 14:51:52</p>
+        <p><span>Created:</span>2019-01-09, 15:06:54</p>
+        <p><span>Updated:</span>2019-01-09, 15:09:42</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/12/05/tree-tao-tree/" title="初学树套树">http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/</a>
-            <span class="copy-path" data-clipboard-text="From http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/　　By zxy_hhhh" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2019/01/09/luogu-4630/" title="铁人两项">http://zxy-hhhh.cn/2019/01/09/luogu-4630/</a>
+            <span class="copy-path" data-clipboard-text="From http://zxy-hhhh.cn/2019/01/09/luogu-4630/　　By zxy_hhhh" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -341,16 +345,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/05/bzoj3110/">
-                    不勤劳的图书管理员
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/03/luogu-3759/">
-                    K大数查询
+                <a href="/2019/01/08/yuanfangshu/">
+                    圆方树
                 </a>
             </div>
         
@@ -362,7 +360,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要思想"><span class="toc-number">1.</span> <span class="toc-text">主要思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#来几个-栗子"><span class="toc-number">2.</span> <span class="toc-text">来几个 栗子</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -398,7 +396,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"初学树套树　| zxy_hhhh's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"铁人两项　| zxy_hhhh's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -435,15 +433,13 @@ new Valine({
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/05/bzoj3110/" title="Pre: 不勤劳的图书管理员">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/03/luogu-3759/" title="Next: K大数查询">
+            <a href="/2019/01/08/yuanfangshu/" title="Next: 圆方树">
                 <i class="fa fa-angle-right"></i>
             </a>
         
