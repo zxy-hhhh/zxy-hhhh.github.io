@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2019-01-09T10:10:59.842Z</updated>
+  <updated>2019-01-11T11:06:48.917Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>contest0111</title>
+    <link href="http://zxy-hhhh.cn/2019/01/11/contest0111/"/>
+    <id>http://zxy-hhhh.cn/2019/01/11/contest0111/</id>
+    <published>2019-01-11T07:34:46.000Z</published>
+    <updated>2019-01-11T11:06:48.917Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;模拟赛&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>contest0110</title>
+    <link href="http://zxy-hhhh.cn/2019/01/10/contest0110/"/>
+    <id>http://zxy-hhhh.cn/2019/01/10/contest0110/</id>
+    <published>2019-01-10T12:41:04.000Z</published>
+    <updated>2019-01-10T13:19:32.786Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;模拟赛&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="模拟赛" scheme="http://zxy-hhhh.cn/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多项式</title>
+    <link href="http://zxy-hhhh.cn/2019/01/09/Polynomial/"/>
+    <id>http://zxy-hhhh.cn/2019/01/09/Polynomial/</id>
+    <published>2019-01-09T11:42:44.000Z</published>
+    <updated>2019-01-09T13:00:57.438Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里是一些模板&lt;del&gt;然而并不会写教程&lt;/del&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="多项式" scheme="http://zxy-hhhh.cn/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF487E</title>
+    <link href="http://zxy-hhhh.cn/2019/01/09/CF487E/"/>
+    <id>http://zxy-hhhh.cn/2019/01/09/CF487E/</id>
+    <published>2019-01-09T11:41:40.000Z</published>
+    <updated>2019-01-09T11:41:40.766Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>最短路</title>
+    <link href="http://zxy-hhhh.cn/2019/01/09/bzoj2125/"/>
+    <id>http://zxy-hhhh.cn/2019/01/09/bzoj2125/</id>
+    <published>2019-01-09T11:29:44.000Z</published>
+    <updated>2019-01-09T11:36:49.868Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;圆方树&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="圆方树" scheme="http://zxy-hhhh.cn/tags/%E5%9C%86%E6%96%B9%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>小C的独立集</title>
@@ -32,9 +120,9 @@
     
       <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="DP" scheme="http://zxy-hhhh.cn/tags/DP/"/>
-    
       <category term="圆方树" scheme="http://zxy-hhhh.cn/tags/%E5%9C%86%E6%96%B9%E6%A0%91/"/>
+    
+      <category term="DP" scheme="http://zxy-hhhh.cn/tags/DP/"/>
     
   </entry>
   
@@ -63,7 +151,7 @@
     <link href="http://zxy-hhhh.cn/2019/01/08/yuanfangshu/"/>
     <id>http://zxy-hhhh.cn/2019/01/08/yuanfangshu/</id>
     <published>2019-01-08T12:58:15.000Z</published>
-    <updated>2019-01-09T11:14:29.596Z</updated>
+    <updated>2019-01-09T11:40:17.807Z</updated>
     
     <summary type="html">
     
@@ -124,7 +212,7 @@
     <link href="http://zxy-hhhh.cn/2018/12/06/about-zxy/"/>
     <id>http://zxy-hhhh.cn/2018/12/06/about-zxy/</id>
     <published>2018-12-06T07:40:12.000Z</published>
-    <updated>2019-01-09T00:37:09.674Z</updated>
+    <updated>2019-01-11T11:10:00.914Z</updated>
     
     <summary type="html">
     
