@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
-<link rel="stylesheet" href="/css/pages/comments.css">
+<link rel="stylesheet" href="/.css">
 
     <!--script-->
 
@@ -56,23 +56,6 @@
 
 <!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
 
-
-<script src="/js/thirdParty/gitment.browser.min.js"></script>
-<script>
-  var labels = "blog,gitment";
-  labels = labels.split(",");
-  var gitment = new Gitment({
-    id: window.location.pathname,
-    owner: "zxy-hhhh",
-    repo: "gitment",
-    oauth: {
-      client_id: "938ce506fa601d4b0f91",
-      client_secret: "4e0d3478973bd3ece5f7688d834244124b96a0aa"
-    },
-    perPage: "20",
-    labels: labels
-  });
-</script>
 
     
     
@@ -144,7 +127,7 @@
   <h3 class="fa fa-tags widget-title">Tag Cloud</h3>
   <div class="tagcloud-content">
     
-      <a href="/tags/DP/" style="font-size: 0.14rem; color: #69c">DP</a> <a href="/tags/数学/" style="font-size: 0.14rem; color: #69c">数学</a> <a href="/tags/数据结构/" style="font-size: 0.2rem; color: #0a407c">数据结构</a> <a href="/tags/树套树/" style="font-size: 0.18rem; color: #215690">树套树</a> <a href="/tags/图论/" style="font-size: 0.18rem; color: #215690">图论</a> <a href="/tags/圆方树/" style="font-size: 0.17rem; color: #386da4">圆方树</a> <a href="/tags/多项式/" style="font-size: 0.14rem; color: #69c">多项式</a> <a href="/tags/模拟赛/" style="font-size: 0.16rem; color: #4f83b8">模拟赛</a> <a href="/tags/数论/" style="font-size: 0.14rem; color: #69c">数论</a> <a href="/tags/杜教筛/" style="font-size: 0.14rem; color: #69c">杜教筛</a> <a href="/tags/树链剖分/" style="font-size: 0.14rem; color: #69c">树链剖分</a> <a href="/tags/树状数组/" style="font-size: 0.14rem; color: #69c">树状数组</a> <a href="/tags/LCT/" style="font-size: 0.14rem; color: #69c">LCT</a>
+      <a href="/tags/DP/" style="font-size: 0.14rem; color: #69c">DP</a> <a href="/tags/数学/" style="font-size: 0.14rem; color: #69c">数学</a> <a href="/tags/数据结构/" style="font-size: 0.2rem; color: #0a407c">数据结构</a> <a href="/tags/树套树/" style="font-size: 0.18rem; color: #215690">树套树</a> <a href="/tags/图论/" style="font-size: 0.18rem; color: #215690">图论</a> <a href="/tags/圆方树/" style="font-size: 0.17rem; color: #386da4">圆方树</a> <a href="/tags/多项式/" style="font-size: 0.14rem; color: #69c">多项式</a> <a href="/tags/LCT/" style="font-size: 0.14rem; color: #69c">LCT</a> <a href="/tags/模拟赛/" style="font-size: 0.16rem; color: #4f83b8">模拟赛</a> <a href="/tags/数论/" style="font-size: 0.14rem; color: #69c">数论</a> <a href="/tags/杜教筛/" style="font-size: 0.14rem; color: #69c">杜教筛</a> <a href="/tags/树链剖分/" style="font-size: 0.14rem; color: #69c">树链剖分</a> <a href="/tags/树状数组/" style="font-size: 0.14rem; color: #69c">树状数组</a>
   </div>
 </li>
 
@@ -293,9 +276,24 @@
     <div id="comments">
         
 
+<div id="disqus_thread"></div>
 <script>
-  gitment.render(document.getElementById("comments"));
+    var shortName = 'zxy-hhhh-cn'
+
+    var disqus_config = function () {
+     this.page.url = 'http://zxy-hhhh.cn/2019/01/08/yuanfangshu/';  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = 'post'+'-2019/01/08/yuanfangshu/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//'+shortName+'.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<script id="dsq-count-scr" src="//zxy-hhhh-cn.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 
 
 
