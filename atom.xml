@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2019-01-11T11:06:48.917Z</updated>
+  <updated>2019-01-29T05:35:29.816Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>杜教筛</title>
+    <link href="http://zxy-hhhh.cn/2019/01/17/dujiaoshai/"/>
+    <id>http://zxy-hhhh.cn/2019/01/17/dujiaoshai/</id>
+    <published>2019-01-17T11:39:10.000Z</published>
+    <updated>2019-01-29T05:35:29.816Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h2&gt;&lt;p&gt;内容总结自&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://acfcacfca.blog.luogu.org/dls-tql&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
+    
+      <category term="数论" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="杜教筛" scheme="http://zxy-hhhh.cn/tags/%E6%9D%9C%E6%95%99%E7%AD%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>contest0111</title>
     <link href="http://zxy-hhhh.cn/2019/01/11/contest0111/"/>
     <id>http://zxy-hhhh.cn/2019/01/11/contest0111/</id>
     <published>2019-01-11T07:34:46.000Z</published>
-    <updated>2019-01-11T11:06:48.917Z</updated>
+    <updated>2019-01-29T05:35:23.888Z</updated>
     
     <summary type="html">
     
@@ -29,6 +58,10 @@
     
     </summary>
     
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
+    
+      <category term="模拟赛" scheme="http://zxy-hhhh.cn/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
     
   </entry>
   
@@ -37,13 +70,15 @@
     <link href="http://zxy-hhhh.cn/2019/01/10/contest0110/"/>
     <id>http://zxy-hhhh.cn/2019/01/10/contest0110/</id>
     <published>2019-01-10T12:41:04.000Z</published>
-    <updated>2019-01-10T13:19:32.786Z</updated>
+    <updated>2019-01-29T05:35:19.531Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;模拟赛&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="模拟赛" scheme="http://zxy-hhhh.cn/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
@@ -55,13 +90,15 @@
     <link href="http://zxy-hhhh.cn/2019/01/09/Polynomial/"/>
     <id>http://zxy-hhhh.cn/2019/01/09/Polynomial/</id>
     <published>2019-01-09T11:42:44.000Z</published>
-    <updated>2019-01-09T13:00:57.438Z</updated>
+    <updated>2019-01-29T05:35:54.651Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;这里是一些模板&lt;del&gt;然而并不会写教程&lt;/del&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数学" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E5%AD%A6/"/>
@@ -71,31 +108,19 @@
   </entry>
   
   <entry>
-    <title>CF487E</title>
-    <link href="http://zxy-hhhh.cn/2019/01/09/CF487E/"/>
-    <id>http://zxy-hhhh.cn/2019/01/09/CF487E/</id>
-    <published>2019-01-09T11:41:40.000Z</published>
-    <updated>2019-01-09T11:41:40.766Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>最短路</title>
     <link href="http://zxy-hhhh.cn/2019/01/09/bzoj2125/"/>
     <id>http://zxy-hhhh.cn/2019/01/09/bzoj2125/</id>
     <published>2019-01-09T11:29:44.000Z</published>
-    <updated>2019-01-09T11:36:49.868Z</updated>
+    <updated>2019-01-29T05:39:06.112Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;圆方树&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -109,13 +134,15 @@
     <link href="http://zxy-hhhh.cn/2019/01/09/bzoj4316/"/>
     <id>http://zxy-hhhh.cn/2019/01/09/bzoj4316/</id>
     <published>2019-01-09T10:05:31.000Z</published>
-    <updated>2019-01-09T10:10:59.842Z</updated>
+    <updated>2019-01-29T05:34:59.770Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;圆方树入门&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -131,13 +158,15 @@
     <link href="http://zxy-hhhh.cn/2019/01/09/luogu-4630/"/>
     <id>http://zxy-hhhh.cn/2019/01/09/luogu-4630/</id>
     <published>2019-01-09T07:06:54.000Z</published>
-    <updated>2019-01-09T07:09:42.508Z</updated>
+    <updated>2019-01-29T05:35:45.032Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;圆方树入门&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -151,7 +180,7 @@
     <link href="http://zxy-hhhh.cn/2019/01/08/yuanfangshu/"/>
     <id>http://zxy-hhhh.cn/2019/01/08/yuanfangshu/</id>
     <published>2019-01-08T12:58:15.000Z</published>
-    <updated>2019-01-09T11:40:17.807Z</updated>
+    <updated>2019-01-29T05:36:04.267Z</updated>
     
     <summary type="html">
     
@@ -159,6 +188,8 @@
 &lt;p&gt;圆方树题的整理和一个模板&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="图论" scheme="http://zxy-hhhh.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -170,13 +201,15 @@
     <link href="http://zxy-hhhh.cn/2019/01/06/luogu-3676/"/>
     <id>http://zxy-hhhh.cn/2019/01/06/luogu-3676/</id>
     <published>2019-01-06T10:38:42.000Z</published>
-    <updated>2019-01-09T06:57:21.119Z</updated>
+    <updated>2019-01-29T05:35:36.286Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;del&gt;真是小清新&lt;/del&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -192,13 +225,15 @@
     <link href="http://zxy-hhhh.cn/2018/12/13/bzoj4573/"/>
     <id>http://zxy-hhhh.cn/2018/12/13/bzoj4573/</id>
     <published>2018-12-13T14:06:46.000Z</published>
-    <updated>2019-01-09T07:02:15.234Z</updated>
+    <updated>2019-01-29T05:35:04.486Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;有趣的LCT题&lt;br&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -212,7 +247,7 @@
     <link href="http://zxy-hhhh.cn/2018/12/06/about-zxy/"/>
     <id>http://zxy-hhhh.cn/2018/12/06/about-zxy/</id>
     <published>2018-12-06T07:40:12.000Z</published>
-    <updated>2019-01-11T11:10:00.914Z</updated>
+    <updated>2019-01-29T05:38:53.011Z</updated>
     
     <summary type="html">
     
@@ -228,13 +263,15 @@
     <link href="http://zxy-hhhh.cn/2018/12/05/bzoj3110/"/>
     <id>http://zxy-hhhh.cn/2018/12/05/bzoj3110/</id>
     <published>2018-12-05T06:39:39.000Z</published>
-    <updated>2019-01-09T06:56:29.066Z</updated>
+    <updated>2019-01-29T05:34:48.725Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;del&gt;暴力可以AC&lt;/del&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -248,13 +285,15 @@
     <link href="http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/"/>
     <id>http://zxy-hhhh.cn/2018/12/05/tree-tao-tree/</id>
     <published>2018-12-05T05:26:40.000Z</published>
-    <updated>2019-01-09T06:51:52.886Z</updated>
+    <updated>2019-01-29T05:35:59.450Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;最近写了点树套树，感觉也没那么可怕&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -268,13 +307,15 @@
     <link href="http://zxy-hhhh.cn/2018/12/03/luogu-3759/"/>
     <id>http://zxy-hhhh.cn/2018/12/03/luogu-3759/</id>
     <published>2018-12-03T06:39:58.000Z</published>
-    <updated>2019-01-09T07:04:00.929Z</updated>
+    <updated>2019-01-29T05:35:40.869Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;模板题&lt;/p&gt;
     
     </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
     
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -288,7 +329,7 @@
     <link href="http://zxy-hhhh.cn/2018/12/03/bzoj3196/"/>
     <id>http://zxy-hhhh.cn/2018/12/03/bzoj3196/</id>
     <published>2018-12-03T06:39:30.000Z</published>
-    <updated>2019-01-09T07:05:44.716Z</updated>
+    <updated>2019-01-29T05:34:55.191Z</updated>
     
     <summary type="html">
     
@@ -296,32 +337,12 @@
     
     </summary>
     
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
     
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="树套树" scheme="http://zxy-hhhh.cn/tags/%E6%A0%91%E5%A5%97%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>公告</title>
-    <link href="http://zxy-hhhh.cn/2018/11/15/test/"/>
-    <id>http://zxy-hhhh.cn/2018/11/15/test/</id>
-    <published>2018-11-15T07:46:04.000Z</published>
-    <updated>2018-12-05T07:57:55.809Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;暂时当更新日志用&quot;&gt;&lt;a href=&quot;#暂时当更新日志用&quot; class=&quot;headerlink&quot; title=&quot;暂时当更新日志用&quot;&gt;&lt;/a&gt;暂时当更新日志用&lt;/h1&gt;&lt;h2 id=&quot;12-4-8-54-update&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
     
   </entry>
   

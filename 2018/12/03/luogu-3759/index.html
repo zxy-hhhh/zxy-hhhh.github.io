@@ -1,315 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
 
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="zxy_hhhh" />
-
-
-
-<meta name="description" content="模板题">
-<meta name="keywords" content="数据结构,树套树">
-<meta property="og:type" content="article">
-<meta property="og:title" content="K大数查询">
-<meta property="og:url" content="http://zxy-hhhh.cn/2018/12/03/luogu-3759/index.html">
-<meta property="og:site_name" content="zxy_hhhh&#39;s blog">
-<meta property="og:description" content="模板题">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-09T07:04:00.929Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="K大数查询">
-<meta name="twitter:description" content="模板题">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+<meta name="description" content=OI/>
 
 
-    <link rel="alternate" href="/atom.xml" title="zxy_hhhh&#39;s blog" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
 
 <title>K大数查询 | zxy_hhhh&#39;s blog</title>
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="zxy_hhhh&#39;s blog" type="application/atom+xml">
 
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
+
+    <!--script-->
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
 <script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "zxy",
+    repo: "zxy-hhhh.cn",
+    oauth: {
+      client_id: "938ce506fa601d4b0f91",
+      client_secret: "4e0d3478973bd3ece5f7688d834244124b96a0aa"
+    },
+    perPage: "20",
+    labels: labels
+  });
 </script>
 
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
-
+    
+    
 </head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+
+<body id="normal">
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">zxy_hhhh&#39;s blog</h1>
         </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">zxy_hhhh</a></h1>
-        </hgroup>
-
         
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
-                        
-                        <li>Friends</li>
-                        
-                        
-                        <li>About Me</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCT/">LCT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/圆方树/">圆方树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多项式/">多项式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树套树/">树套树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树链剖分/">树链剖分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模拟赛/">模拟赛</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/zykykyk">zyk</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/Shallowy">hje</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://dilute.coding.me">dilute</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://https://xcfubuki.cn">fubuki</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">浙江OIer,fighting for dream</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zxy_hhhh</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">zxy_hhhh</a></h1>
-            </hgroup>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>Search</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">Categories</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/"><i class="fa" aria-hidden="true">OI</i></a><span class="category-list-count">14</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">Archives</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">January 2019</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/"><i class="fa" aria-hidden="true">December 2018</i></a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1028/12/"><i class="fa" aria-hidden="true">December 1028</i></a><span class="archive-list-count">1</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">Popular Posts</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">Tag Cloud</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/树套树/" style="font-size: 0.18rem; color: #215690">树套树</a> <a href="/tags/数学/" style="font-size: 0.14rem; color: #69c">数学</a> <a href="/tags/图论/" style="font-size: 0.18rem; color: #215690">图论</a> <a href="/tags/圆方树/" style="font-size: 0.17rem; color: #386da4">圆方树</a> <a href="/tags/数据结构/" style="font-size: 0.2rem; color: #0a407c">数据结构</a> <a href="/tags/LCT/" style="font-size: 0.14rem; color: #69c">LCT</a> <a href="/tags/多项式/" style="font-size: 0.14rem; color: #69c">多项式</a> <a href="/tags/DP/" style="font-size: 0.14rem; color: #69c">DP</a> <a href="/tags/模拟赛/" style="font-size: 0.16rem; color: #4f83b8">模拟赛</a> <a href="/tags/数论/" style="font-size: 0.14rem; color: #69c">数论</a> <a href="/tags/杜教筛/" style="font-size: 0.14rem; color: #69c">杜教筛</a> <a href="/tags/树链剖分/" style="font-size: 0.14rem; color: #69c">树链剖分</a> <a href="/tags/树状数组/" style="font-size: 0.14rem; color: #69c">树状数组</a>
+  </div>
+</li>
+
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">Friends</h3><br/>
+
+    
+        <a href="https://www.cnblogs.com/zykykyk" class="fa" target="_blank">zyk</a>
+
+    
+        <a href="https://www.cnblogs.com/Shallowy" class="fa" target="_blank">hje</a>
+
+    
+        <a href="https://dilute.coding.me" class="fa" target="_blank">dilute</a>
+
+    
+        <a href="https://https://xcfubuki.cn" class="fa" target="_blank">fubuki</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="K大数查询">
+                
+                K大数查询
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>OI</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:zxy_hhhh@qq.com" title="Email"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" title="QQ"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
-</nav>
-      <div class="body-wrap"><article id="post-luogu-3759" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/03/luogu-3759/" class="article-date">
-      <time datetime="2018-12-03T06:39:58.000Z" itemprop="datePublished">2018-12-03</time>
-</a>
+            数据结构
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2018/12/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="K大数查询"
+              data-leadcloud-url="/2018/12/03/luogu-3759/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
 
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            
+            
+        </div>
         
-  
-    <h1 class="article-title" itemprop="name">
-      K大数查询
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树套树/">树套树</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>模板题</p>
+        <div id="post-body">
+            <p>模板题</p>
 <a id="more"></a>
 <p><a href="https://www.luogu.org/problemnew/show/P3759" target="_blank" rel="noopener">题目链接</a></p>
 <p>因为有区间修改，所以外层建权值线段树，内层建区间树</p>
@@ -324,255 +225,192 @@
 <p>在具体实现的时候，我为了图方便用了<strong>指针</strong>和<strong>namespace</strong></p>
 <p>如果你看不懂指针，可以往下翻，有无指针的代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Author: zxy_hhhh</span></span><br><span class="line"><span class="comment">    date: 2018/12/01</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(x, a, b) for (int x = int(a); x &lt;= (int)(b); x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drp(x, a, b) for (int x = int(a); x &gt;= (int)(b); x--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cross(x, a) for (int x = hd[a]; x; x = nx[x])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll _x=<span class="number">0</span>;<span class="keyword">int</span> _ch=getchar(),_f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(_ch)&amp;&amp;(_ch!=<span class="string">'-'</span>)&amp;&amp;(_ch!=EOF);_ch=getchar());</span><br><span class="line">    <span class="keyword">if</span> (_ch==<span class="string">'-'</span>)&#123;_f=<span class="number">0</span>;_ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(_ch);_ch=getchar()) _x=_x*<span class="number">10</span>+_ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> _f?_x:-_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(ll _x)</span></span>&#123;<span class="keyword">if</span> (_x&gt;=<span class="number">10</span>) write(_x/<span class="number">10</span>),<span class="built_in">putchar</span>(_x%<span class="number">10</span>+<span class="string">'0'</span>); <span class="keyword">else</span> <span class="built_in">putchar</span>(_x+<span class="string">'0'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrt</span><span class="params">(ll _x,<span class="keyword">char</span> _p)</span></span>&#123;<span class="keyword">if</span> (_x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),_x=-_x; write(_x); <span class="keyword">if</span> (_p) <span class="built_in">putchar</span>(_p);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 50005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">namespace</span> xtree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> lazy;</span><br><span class="line">    ll sum;</span><br><span class="line">    node *ls, *rs;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node *&amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="literal">NULL</span>) u = <span class="keyword">new</span> node;</span><br><span class="line">    <span class="keyword">if</span> (ql == l &amp;&amp; r == qr) &#123;</span><br><span class="line">        u-&gt;lazy++, u-&gt;sum += r - l + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    u-&gt;sum += qr - ql + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (qr &lt;= mid)</span><br><span class="line">        insert(u-&gt;ls, l, mid, ql, qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ql &gt; mid)</span><br><span class="line">        insert(u-&gt;rs, mid + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        insert(u-&gt;ls, l, mid, ql, mid), insert(u-&gt;rs, mid + <span class="number">1</span>, r, mid + <span class="number">1</span>, qr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(node *u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql == l &amp;&amp; qr == r) <span class="keyword">return</span> u-&gt;sum;</span><br><span class="line">    ll ans = (qr - ql + <span class="number">1</span>) * u-&gt;lazy;</span><br><span class="line">    <span class="keyword">if</span> (qr &lt;= mid)</span><br><span class="line">        <span class="keyword">return</span> ans + query(u-&gt;ls, l, mid, ql, qr);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ql &gt; mid)</span><br><span class="line">        <span class="keyword">return</span> ans + query(u-&gt;rs, mid + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> query(u-&gt;ls, l, mid, ql, mid) + ans +</span><br><span class="line">               query(u-&gt;rs, mid + <span class="number">1</span>, r, mid + <span class="number">1</span>, qr);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;  <span class="comment">// namespace xtree</span></span><br><span class="line"><span class="keyword">namespace</span> ytree &#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    xtree::node *rt;</span><br><span class="line">&#125; tr[<span class="number">400005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    xtree::insert(tr[pos].rt, <span class="number">1</span>, n, ql, qr);</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid)</span><br><span class="line">        insert(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        insert(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span> l;</span><br><span class="line">    ll sum = xtree::query(tr[pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].rt, <span class="number">1</span>, n, ql, qr);</span><br><span class="line">    <span class="keyword">if</span> (sum &gt;= x)</span><br><span class="line">        <span class="keyword">return</span> query(pos &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, ql, qr, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> query(pos &lt;&lt; <span class="number">1</span>, l, mid, ql, qr, x - sum);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;  <span class="comment">// namespace ytree</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> op, l, r;</span><br><span class="line">    ll c;</span><br><span class="line">&#125; Q[maxn];</span><br><span class="line"><span class="keyword">int</span> H[maxn], tot;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = rd(), m = rd();</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> op = rd(), l = rd(), r = rd();</span><br><span class="line">        ll x = rd();</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>) ytree::insert(<span class="number">1</span>, -n, n, l, r, x);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">2</span>) wrt(ytree::query(<span class="number">1</span>, -n, n, l, r, x), <span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>Title:</span><a href="/2018/12/03/luogu-3759/">K大数查询</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">zxy_hhhh</a></p>
-        <p><span>Created:</span>2018-12-03, 14:39:58</p>
-        <p><span>Updated:</span>2019-01-09, 15:04:00</p>
-        <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/12/03/luogu-3759/" title="K大数查询">http://zxy-hhhh.cn/2018/12/03/luogu-3759/</a>
-            <span class="copy-path" data-clipboard-text="From http://zxy-hhhh.cn/2018/12/03/luogu-3759/　　By zxy_hhhh" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/05/tree-tao-tree/">
-                    初学树套树
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/03/bzoj3196/">
-                    二逼平衡树
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
-
-    <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"K大数查询　| zxy_hhhh's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/avatar.jpg" alt="avatar"/>
+                
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  Author:
+                  
+                    
+                    <a href="/about.html">zxy_hhhh</a>
+                </li>
+                
+                <li>Published Date: <span>2018-12-03  14:39:58</span></li>
+                
+                <li>Updated Date: <span>2019-01-29  13:35:40</span></li>
+                
+                <li class="post-category">
+                    Categories:
+                    
+                    <a href="/categories/OI/">OI</a>
+                    
+                </li>
+                <li class="post-tags">
+                    Tags:
+                    
+                    <a href="/tags/数据结构/">数据结构</a>
+                    
+                    <a href="/tags/树套树/">树套树</a>
+                    
+                </li>
+                
+                <li> License: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="" alt="" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2018/12/05/tree-tao-tree/" class="pre-post fa fa-caret-left">初学树套树</a>
+        
+        
+        <a href="/2018/12/03/bzoj3196/" class="next-post fa">二逼平衡树</a>
+        
+    </div>
     
+    <div id="comments">
+        
 
-    
-</div>
-
-
-
-
-
-
-
-  
-    <div id="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
-new Valine({
-    el: '#comment' ,
-    notify:false, 
-    verify:false, 
-    appId: 'Khnd1pPzVROuplkyEUCrXrAG-gzGzoHsz',
-    appKey: 'aljALTlRBKbw2a14Czm1OxlV',
-    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
+  gitment.render(document.getElementById("comments"));
 </script>
-    
-    
 
 
 
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/12/05/tree-tao-tree/" title="Pre: 初学树套树">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/12/03/bzoj3196/" title="Next: 二逼平衡树">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
     </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/11/contest0111/">contest0111</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/10/contest0110/">contest0110</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/09/Polynomial/">多项式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/09/CF487E/">CF487E</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/09/bzoj2125/">最短路</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/09/bzoj4316/">小C的独立集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/09/luogu-4630/">铁人两项</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/08/yuanfangshu/">圆方树</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/06/luogu-3676/">小清新数据结构题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/13/bzoj4573/">大森林</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/06/about-zxy/">about-zxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/05/bzoj3110/">不勤劳的图书管理员</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/05/tree-tao-tree/">初学树套树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/03/luogu-3759/">K大数查询</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/03/bzoj3196/">二逼平衡树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/15/test/">公告</a></li><li class="post-list-item"><a class="post-list-link" href="/1028/12/06/my-ss/">ss</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
-
+    
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2018-2019 zxy_hhhh
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a><i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3295639227&site=qq&menu=yes" class="fa fa-qq" target="_blank" title="QQ"></a>
+        
+        <a href="https://github.com/zxy-hhhh/" class="fa fa-github" target="_blank" title="Github"></a>
+        
+        <a href="mailto:zxy_hhhh@qq.com" class="fa fa-envelope" target="_blank" title="mail to me"></a>
         
     </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">zxy_hhhh</a>&copy;2015 - 2019.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
 </footer>
-    </div>
-    
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 7;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
-
-
-
-
-
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
-<script>
-    // Open in New Window
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    <li class="exchange-btn fa fa-exchange"></li>
+  
+    <li class="toc-btn fa fa-list-ul"></li>
     
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
     
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
 </script>
-  </div>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+
 </body>
 </html>
