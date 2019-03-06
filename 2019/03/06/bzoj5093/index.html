@@ -212,6 +212,7 @@
 <p>然后这个式子并过不来这题</p>
 <p>这个$\sum$前面部分处理起来比较方便，考虑化后面部分。</p>
 <p>考虑一个柿子：<br>$$<br>n^k=\sum\limits_{i=0}^kS(k,i)\binom{n}{i}i!<br>$$<br>证明：左边表示把$k$个球放入n个不同的盒子中的方案数，右边表示枚举有$i$个盒子非空的方案，两者相等。（组合意义）</p>
+<p>实际上这个式子的枚举上界因为$n$，但是改为$k$结果不变</p>
 <p>知道这个柿子之后就可以化简</p>
 <p>$$<br>\sum\limits_{i=0}^{n-1}\binom{n-1}{i}\sum\limits_{j=0}^kS(k,j)\binom{i}{j}j!\<br>=\sum\limits_{j=0}^kS(k,j)j!\sum\limits_{i=0}^{n-1}\binom{n-1}{i}\binom{i}{j}<br>$$</p>
 <p>然后</p>
@@ -240,7 +241,7 @@
                 
                 <li>Published Date: <span>2019-03-06  10:05:23</span></li>
                 
-                <li>Updated Date: <span>2019-03-06  10:33:37</span></li>
+                <li>Updated Date: <span>2019-03-06  10:53:34</span></li>
                 
                 <li class="post-category">
                     Categories:
