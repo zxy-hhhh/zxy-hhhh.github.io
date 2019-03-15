@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2019-03-15T06:29:51.108Z</updated>
+  <updated>2019-03-15T13:10:08.449Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ZJOI2018历史</title>
+    <link href="http://zxy-hhhh.cn/2019/03/15/luogu-4338/"/>
+    <id>http://zxy-hhhh.cn/2019/03/15/luogu-4338/</id>
+    <published>2019-03-15T12:33:23.000Z</published>
+    <updated>2019-03-15T13:10:08.449Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没写数据结构了，LCT都不会了&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
+    
+      <category term="LCT" scheme="http://zxy-hhhh.cn/tags/LCT/"/>
+    
+      <category term="构造" scheme="http://zxy-hhhh.cn/tags/%E6%9E%84%E9%80%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>玩游戏</title>
@@ -443,22 +465,6 @@
       <category term="数据结构" scheme="http://zxy-hhhh.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="树套树" scheme="http://zxy-hhhh.cn/tags/%E6%A0%91%E5%A5%97%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ss</title>
-    <link href="http://zxy-hhhh.cn/1028/12/06/my-ss/"/>
-    <id>http://zxy-hhhh.cn/1028/12/06/my-ss/</id>
-    <published>1028-12-06T01:35:55.000Z</published>
-    <updated>2018-12-06T07:58:39.047Z</updated>
-    
-    <summary type="html">
-    
-      The article has been encrypted, please enter your password to view.&lt;br&gt;
-    
-    </summary>
-    
     
   </entry>
   
