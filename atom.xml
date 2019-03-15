@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxy-hhhh.cn/"/>
-  <updated>2019-03-06T02:53:34.930Z</updated>
+  <updated>2019-03-15T06:29:51.108Z</updated>
   <id>http://zxy-hhhh.cn/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>玩游戏</title>
+    <link href="http://zxy-hhhh.cn/2019/03/15/luogu-4705/"/>
+    <id>http://zxy-hhhh.cn/2019/03/15/luogu-4705/</id>
+    <published>2019-03-15T04:57:02.000Z</published>
+    <updated>2019-03-15T06:29:51.108Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这应该是省选前我写的最后一道多项式（模拟赛除外&lt;/p&gt;
+&lt;h1 id=&quot;玩游戏&quot;&gt;&lt;a href=&quot;#玩游戏&quot; class=&quot;headerlink&quot; title=&quot;玩游戏&quot;&gt;&lt;/a&gt;玩游戏&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
+    
+      <category term="多项式" scheme="http://zxy-hhhh.cn/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SDOI2017遗忘的集合</title>
+    <link href="http://zxy-hhhh.cn/2019/03/14/luogu-3784/"/>
+    <id>http://zxy-hhhh.cn/2019/03/14/luogu-3784/</id>
+    <published>2019-03-14T10:51:25.000Z</published>
+    <updated>2019-03-15T06:41:55.046Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;毒瘤&lt;/p&gt;
+&lt;h1 id=&quot;SDOI2017-遗忘的集合&quot;&gt;&lt;a href=&quot;#SDOI2017-遗忘的集合&quot; class=&quot;headerlink&quot; title=&quot;[SDOI2017]遗忘的集合&quot;&gt;&lt;/a&gt;[SDOI2017]遗忘的集合&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="OI" scheme="http://zxy-hhhh.cn/categories/OI/"/>
+    
+    
+      <category term="多项式,毒瘤" scheme="http://zxy-hhhh.cn/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F-%E6%AF%92%E7%98%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>图的价值</title>
@@ -136,7 +190,7 @@
     <link href="http://zxy-hhhh.cn/2019/01/09/Polynomial/"/>
     <id>http://zxy-hhhh.cn/2019/01/09/Polynomial/</id>
     <published>2019-01-09T11:42:44.000Z</published>
-    <updated>2019-03-10T13:14:55.739Z</updated>
+    <updated>2019-03-15T06:37:29.946Z</updated>
     
     <summary type="html">
     

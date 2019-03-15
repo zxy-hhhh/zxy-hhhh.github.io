@@ -22,7 +22,7 @@
 <meta name="verify" content=all />
     <!--Title-->
 
-<title>Tag: 数据结构 | zxy_hhhh&#39;s blog</title>
+<title>SDOI2017遗忘的集合 | zxy_hhhh&#39;s blog</title>
 
 <link rel="alternate" href="/atom.xml" title="zxy_hhhh&#39;s blog" type="application/atom+xml">
 
@@ -31,9 +31,10 @@
 
     
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/archive.css">
+<link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/.css">
 
     <!--script-->
 
@@ -157,14 +158,15 @@
 
 
         <div id="main">
-    <div id="post-list">
-        <ul class="archives-post-list">
-            
-            <li class="post-items" _href="/2019/01/06/luogu-3676/">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="SDOI2017遗忘的集合">
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">小清新数据结构题</h2>
-                <div class="article-meta">
+                SDOI2017遗忘的集合
+                
+            </h1>
+            <div class="article-meta">
     
     
     <span class="categories-meta fa-wrap">
@@ -173,184 +175,138 @@
     </span>
     
     
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            多项式,毒瘤
+            
+        </span>
+    </span>
+    
     
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2019/01/06</span>
+        <span class="date-meta ">2019/03/14</span>
     </span>
     
     
     <span class="fa-wrap">
             <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="小清新数据结构题"
-              data-leadcloud-url="/2019/01/06/luogu-3676/"><i class="fa fa-spinner fa-spin"></i></span>
+        <span class="hits hits-meta " data-leadcloud-title="SDOI2017遗忘的集合"
+              data-leadcloud-url="/2019/03/14/luogu-3784/"><i class="fa fa-spinner fa-spin"></i></span>
     </span>
     
     
 </div>
 
-            </li>
             
-            <li class="post-items" _href="/2018/12/13/bzoj4573/">
+            
+        </div>
+        
+        <div id="post-body">
+            <p>毒瘤</p>
+<h1 id="SDOI2017-遗忘的集合"><a href="#SDOI2017-遗忘的集合" class="headerlink" title="[SDOI2017]遗忘的集合"></a>[SDOI2017]遗忘的集合</h1><p><a href="https://www.luogu.org/problemnew/show/P3784" target="_blank" rel="noopener">链接</a></p>
+<p>一个显然的柿子$F(x)=\prod\limits_{i=1}^n(\frac{1}{1-x^i})^{t_i}$</p>
+<p>$t_i$表示是否出现值为$0$或$1$</p>
+<p>然后开始推柿子</p>
+<script type="math/tex; mode=display">
+-ln(F(x))=\sum\limits_{i=1}^{n}t_iln(1-x^i)\\
+设G(x)=ln(1-x^i)\\
+G'(x)=-\frac{ix^{i-1}}{1-x^i}\\
+因为\frac{1}{1-x^i}=\sum\limits_{j=0}^{\infty}x^{ij}\\
+G'(x)=\sum\limits_{j=0}^{\infty}-ix^{ij+i-1}\\
+G(x)=\sum\limits_{j=0}^{\infty}-\frac{ix^{ij+i}}{ij+i}\\
+=-\sum\limits_{j=0}^{\infty}\frac{x^{i(j+1)}}{j+1}\\
+=-\sum\limits_{j=1}^{\infty}\frac{x^{ij}}{j}\\
+ln(F(x))=\sum\limits_{i=1}^nt_i\sum\limits_{j=1}^{\lfloor\frac{n}{i}\rfloor}\frac{x^{ij}}{j}\\
+=\sum\limits_{T=1}^nx^T\sum\limits_{i=1}^{\lfloor\frac{n}{T}\rfloor}t_i\frac{i}{T}</script><p>然后因为题目给定了$F$，所以$ln(F(x))$可以直接求出，相当于是对于每个$T$，知道了$\sum\limits_{i=1}^{\lfloor\frac{n}{T}\rfloor}t_i\frac{i}{T}$，然后$t_i$直接xje反演一下就可以了。</p>
+<h2 id="然后这题特别毒瘤一点，要-MTT-，所以"><a href="#然后这题特别毒瘤一点，要-MTT-，所以" class="headerlink" title="然后这题特别毒瘤一点，要$MTT$，所以"></a>然后这题特别毒瘤一点，要$MTT$，所以</h2><p>莫得代码</p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/avatar.jpg" alt="avatar"/>
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">大森林</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>OI</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2018/12/13</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="大森林"
-              data-leadcloud-url="/2018/12/13/bzoj4573/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2018/12/05/bzoj3110/">
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">不勤劳的图书管理员</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>OI</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2018/12/05</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="不勤劳的图书管理员"
-              data-leadcloud-url="/2018/12/05/bzoj3110/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2018/12/05/tree-tao-tree/">
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  Author:
+                  
+                    
+                    <a href="/about.html">zxy_hhhh</a>
+                </li>
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">初学树套树</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>OI</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2018/12/05</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="初学树套树"
-              data-leadcloud-url="/2018/12/05/tree-tao-tree/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2018/12/03/luogu-3759/">
+                <li>Published Date: <span>2019-03-14  18:51:25</span></li>
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">K大数查询</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>OI</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2018/12/03</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="K大数查询"
-              data-leadcloud-url="/2018/12/03/luogu-3759/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2018/12/03/bzoj3196/">
+                <li>Updated Date: <span>2019-03-15  14:41:55</span></li>
                 
-                <p class="info">数据结构</p>
-                <h2 class="post-item-title">二逼平衡树</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>OI</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2018/12/03</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="二逼平衡树"
-              data-leadcloud-url="/2018/12/03/bzoj3196/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-        </ul>
+                <li class="post-category">
+                    Categories:
+                    
+                    <a href="/categories/OI/">OI</a>
+                    
+                </li>
+                <li class="post-tags">
+                    Tags:
+                    
+                    <a href="/tags/多项式-毒瘤/">多项式,毒瘤</a>
+                    
+                </li>
+                
+                <li> License: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="" alt="" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2019/03/15/luogu-4705/" class="pre-post fa fa-caret-left">玩游戏</a>
+        
+        
+        <a href="/2019/03/06/bzoj5093/" class="next-post fa">图的价值</a>
+        
     </div>
+    
+    <div id="comments">
+        
+
+<div id="disqus_thread"></div>
+<script>
+    var shortName = 'zxy-hhhh-cn'
+
+    var disqus_config = function () {
+     this.page.url = 'http://zxy-hhhh.cn/2019/03/14/luogu-3784/';  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = 'post'+'-2019/03/14/luogu-3784/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//'+shortName+'.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//zxy-hhhh-cn.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    
 </div>
-
-
 
 
     </div>
@@ -389,8 +345,14 @@
     <li class="totop-btn fa fa-angle-up"></li>
     <li class="exchange-btn fa fa-exchange"></li>
   
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
     
 </ul>
 <p id="process"></p>
@@ -409,8 +371,32 @@
     </div>
 </div>
 
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SDOI2017-遗忘的集合"><span class="toc-number">1.</span> <span class="toc-text">[SDOI2017]遗忘的集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#然后这题特别毒瘤一点，要-MTT-，所以"><span class="toc-number">1.1.</span> <span class="toc-text">然后这题特别毒瘤一点，要$MTT$，所以</span></a></li></ol></li></ol>
 
 
+
+
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
